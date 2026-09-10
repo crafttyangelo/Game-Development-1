@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Up & Down
         direction.z = Input.GetAxisRaw("Vertical");
+        
+        // Normalize vector so diagonal movement is normal
+        direction = direction.normalized;
 
         // Construct the velocity vector
         velocity = direction * speed;
@@ -39,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + direction * 2);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawLine(transform.position, transform.position + direction * 2);
     }
 }
