@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [Tooltip("Current time. If the timer has time, it'll count down.")]
     [SerializeField] [Range(0,600)] private float time; // In seconds
     private bool is_paused = false;
     private bool has_finished = false;
